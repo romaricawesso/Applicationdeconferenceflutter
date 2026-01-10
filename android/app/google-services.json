@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "971844482482",
+    "project_id": "asyconf-2307b",
+    "storage_bucket": "asyconf-2307b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971844482482:android:f69831b72833ac0de760ab",
+        "android_client_info": {
+          "package_name": "com.example.applicationdeconference"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJ903kJNqKO68an_UqN3DpvqDJLJ6CJog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

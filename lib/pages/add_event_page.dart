@@ -1,5 +1,6 @@
 import 'package:date_field/date_field.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AddEventPage extends StatefulWidget {
   const AddEventPage({super.key});
@@ -89,13 +90,13 @@ class _AddEventPageState extends State<AddEventPage> {
                 decoration: const InputDecoration(
                   labelText: 'Enter Time',
                   border: OutlineInputBorder(),
-                  ),
+                ),
                 mode: DateTimeFieldPickerMode.dateAndTime,
                 onChanged: (DateTime? value) {
                   print(value);
                   setState(() {
                     selectedConfDate = value!;
-                });
+                  });
                 },
               ),
             ),
@@ -113,6 +114,15 @@ class _AddEventPageState extends State<AddEventPage> {
                       const SnackBar(content: Text("Envoi en cours ...")),
                     );
                     FocusScope.of(context).requestFocus(FocusNode());
+                    CollectionReference eventsRef = FirebaseFirestore.instance
+                        .collection("events");
+                    eventsRef.add({
+                      'speaker':speakerName,
+                      'date': selectedConfDate,
+                      'subject':confName,
+                      'type':selectedConfType,
+                      'avatar':'lior',
+                      });
                   }
                 },
                 child: Text("Envoyer"),
